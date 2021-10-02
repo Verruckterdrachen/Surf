@@ -16,3 +16,19 @@
 		display: block;
 	}
 }
+
+._icon-arrow-right:before {
+	content: "\e900";
+}
+._icon-arrows-down:before {
+	content: "\e901";
+}
+._icon-mark:before {
+	content: "\e902";
+}
+._icon-search:before {
+	content: "\e903";
+}
+._icon-star:before {
+	content: "\e904";
+}
