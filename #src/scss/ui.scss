@@ -1,5 +1,31 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
-
+.logo {
+	&__link {
+		font-size: 24px;
+		line-height: math.div(86, 60) * 100%;
+		text-transform: uppercase;
+		color: inherit;
+		font-weight: 800;
+		position: relative;
+		padding: 0px 20px;
+		&::before {
+			content: "go";
+			position: absolute;
+			top: 0;
+			left: calc(100% + 20px);
+			pointer-events: none;
+		}
+		@media (min-height: $md3+px) and (min-width: 1024px) {
+			font-size: 60px;
+			padding: 0;
+			transform: rotate(-90deg);
+			&::before {
+				left: -38px;
+				transform: translateX(-100%);
+			}
+		}
+	}
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================
