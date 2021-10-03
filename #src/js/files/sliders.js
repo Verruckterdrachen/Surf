@@ -58,66 +58,51 @@ if (sliderScrollItems.length > 0) {
 	}
 }
 
-
 function sliders_bild_callback(params) { }
 
-let slider_about = new Swiper('.about__slider', {
-	/*
-	effect: 'fade',
-	autoplay: {
-		delay: 3000,
-		disableOnInteraction: false,
-	},
-	*/
-	observer: true,
-	observeParents: true,
-	slidesPerView: 1,
-	spaceBetween: 0,
-	autoHeight: true,
-	speed: 800,
-	//touchRatio: 0,
-	//simulateTouch: false,
-	//loop: true,
-	//preloadImages: false,
-	//lazy: true,
-	// Dotts
-	//pagination: {
-	//	el: '.slider-quality__pagging',
-	//	clickable: true,
-	//},
-	// Arrows
-	navigation: {
-		nextEl: '.about__more .more__item_next',
-		prevEl: '.about__more .more__item_prev',
-	},
-	/*
-	breakpoints: {
-		320: {
-			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: true,
+if (document.querySelector('.slider-hero__body')) {
+	let heroSlider = new Swiper('.slider-hero__body', {
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		spaceBetween: 0,
+		watchOverflow: true,
+		parallax: true,
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
 		},
-		768: {
-			slidesPerView: 2,
-			spaceBetween: 20,
+		speed: 1500,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
 		},
-		992: {
-			slidesPerView: 3,
-			spaceBetween: 20,
+		navigation: {
+			nextEl: '.slider-hero .slider-arrow_next',
+			prevEl: '.slider-hero .slider-arrow_prev',
 		},
-		1268: {
-			slidesPerView: 4,
-			spaceBetween: 30,
+		pagination: {
+			el: '.slider-hero__bullets',
+			bulletClass: 'slider-hero__bullet bullet-hero',
+			bulletActiveClass: 'bullet-hero_active',
+			clickable: true,
+			renderBullet: function (index, className) {
+				var dataArray = [];
+				var dataElements = document.querySelectorAll('[data-name]');
+				for (let index = 0; index < dataElements.length; index++) {
+					var dataElement = dataElements[index];
+					dataArray[index] = dataElement.dataset.name;
+				}
+				return '<div class="' + className + '">' +
+					'<span class="bullet-hero__number">0' + (index + 1) + '</span>' +
+					'<span class="bullet-hero__value">' + dataArray[(index + 1)] + '</span>' +
+					'</div>';
+			},
 		},
-	},
-	*/
-	on: {
-		lazyImageReady: function () {
-			ibg();
-		},
-	}
-	// And if we need scrollbar
-	//scrollbar: {
-	//	el: '.swiper-scrollbar',
-	//},
-});
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
+	});
+}
+
+

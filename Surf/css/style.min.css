@@ -153,10 +153,8 @@ body._lock {
   flex-direction: column;
 }
 ._container {
-  max-width: 1230px;
+  max-width: 100vw;
   margin: 0 auto;
-  padding: 0 15px;
-  box-sizing: content-box;
 }
 
 .button {
@@ -488,6 +486,41 @@ textarea.input {
   font-size: 12px;
   width: 100%;
   text-align: center;
+}
+
+.title-primary {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 145.4545454545%;
+  color: #979797;
+  letter-spacing: 7.33px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0px 0px 0px 24px;
+}
+.title-primary::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 1px;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  background-color: #979797;
+}
+
+.title {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 80px;
+  line-height: 107.5%;
+}
+
+.title-place {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 160%;
 }
 
 .logo__link {
@@ -1183,4 +1216,177 @@ body.ie ._ibg img {
 
 .page {
   flex: 1 1 auto;
+}
+.hero {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+.hero__container {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.slider-hero {
+  min-width: 0;
+  position: relative;
+}
+.slider-hero__slide {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media (min-height: 767.98px) and (min-width: 1024px) {
+  .slider-hero__slide {
+    align-items: flex-end;
+  }
+}
+.slider-hero__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.slider-hero__bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(62.09% 62.09% at 42.87% 49.23%, rgba(34, 34, 34, 0.426517) 0%, #0f0f0f 100%);
+}
+.slider-hero__content {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  text-align: right;
+  padding: 80px 15px;
+  z-index: 5;
+}
+@media (min-height: 767.98px) and (min-width: 1024px) {
+  .slider-hero__content {
+    padding: 80px 80px 80px 0px;
+    margin: 0px 0px 160px 0px;
+  }
+}
+.slider-hero__content > *:last-child {
+  margin-bottom: 0;
+}
+.slider-hero__suptitle {
+  margin: 0px 0px 0.4545454545em 0px;
+}
+.slider-hero__title {
+  margin: 0px 0px 0.5em 0px;
+}
+.slider-hero__subtitle {
+  margin: 0px 0px 0.4545454545em 0px;
+}
+.slider-hero__place {
+  margin: 0px 0px 0.5em 0px;
+}
+.slider-hero__bullets {
+  position: absolute;
+  width: 100%;
+  bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
+@media (min-height: 767.98px) and (min-width: 1024px) {
+  .slider-hero__bullets {
+    padding: 0px 80px 0px 190px;
+    justify-content: flex-end;
+  }
+}
+.slider-hero__arrows {
+  display: none;
+}
+@media (min-height: 767.98px) and (min-width: 1024px) {
+  .slider-hero__arrows {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    right: 80px;
+  }
+}
+
+.bullet-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 200px;
+  position: relative;
+}
+.bullet-hero:not(:first-child) {
+  margin-left: 40px;
+}
+@media (max-width: 1230px) {
+  .bullet-hero:not(:first-child) {
+    margin-left: calc(15px + 25 * ((100vw - 320px) / 910));
+  }
+}
+@media (max-width: 767.98px) {
+  .bullet-hero {
+    flex: 0 1 25%;
+  }
+  .bullet-hero__number, .bullet-hero__value {
+    display: none;
+  }
+}
+.bullet-hero::before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: -8px;
+  left: 0;
+  transition: background-color 0.3s;
+  background-color: #fff;
+}
+.bullet-hero_active::before {
+  background-color: #4af6cd;
+}
+@media (any-hover: hover) {
+  .bullet-hero:hover::before {
+    background-color: #4af6cd;
+  }
+}
+.bullet-hero__number {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 141.6666666667%;
+  margin: 0px 0.2083333333em 0px 0px;
+}
+.bullet-hero__value {
+  padding: 5px 0px;
+  text-align: right;
+  font-weight: 300;
+  line-height: 118.75%;
+}
+
+.slider-arrow::before {
+  color: #fff;
+  transition: color 0.3s;
+}
+.slider-arrow_prev {
+  transform: rotate(-180deg);
+  margin: 0px 20px 0px 0px;
+}
+@media (any-hover: hover) {
+  .slider-arrow:hover::before {
+    color: #4af6cd;
+  }
 }

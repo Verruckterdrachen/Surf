@@ -1,4 +1,36 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+.title-primary {
+	font-weight: 400;
+	font-size: 22px;
+	line-height: math.div(32, 22) * 100%;
+	color: #979797;
+	letter-spacing: 7.33px;
+	text-transform: uppercase;
+	position: relative;
+	padding: 0px 0px 0px 24px;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 1px;
+		left: 0;
+		top: 50%;
+		transform: translate(-100%, -50%);
+		background-color: #979797;
+	}
+}
+.title {
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 80px;
+	line-height: math.div(86, 80) * 100%;
+}
+.title-place {
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 40px;
+	line-height: math.div(64, 40) * 100%;
+}
 .logo {
 	&__link {
 		font-size: 24px;
