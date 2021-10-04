@@ -102,6 +102,22 @@ body {
 		display: flex;
 		align-items: flex-end;
 	}
+	&__text-cover {
+		position: absolute;
+		width: 467px;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		opacity: 0.0654;
+		font-weight: 800;
+		pointer-events: none;
+		text-transform: uppercase;
+		@include adaptiv-value("font-size", 200, 50, 1);
+		line-height: math.div(156, 200) * 100%;
+		@media (max-width: $md3+px) {
+			display: none;
+		}
+	}
 }
 .slider-hero {
 	min-width: 0;
