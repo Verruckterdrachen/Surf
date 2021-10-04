@@ -1301,6 +1301,7 @@ body.ie ._ibg img {
   display: flex;
   min-height: 100vh;
   position: relative;
+  background-color: #000;
 }
 .hero__container {
   flex: 1 1 auto;
@@ -1331,6 +1332,29 @@ body.ie ._ibg img {
   }
 }
 
+.map {
+  display: none;
+}
+@media (min-height: 900px) and (min-width: 1024px) {
+  .map {
+    display: block;
+    position: absolute;
+    top: -800px;
+    right: -60px;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+.map__path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: mapPath infinite 10s;
+}
+@keyframes mapPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 .slider-hero {
   min-width: 0;
   position: relative;
@@ -1377,7 +1401,7 @@ body.ie ._ibg img {
 @media (min-height: 767.98px) and (min-width: 1024px) {
   .slider-hero__content {
     padding: 80px 80px 80px 0px;
-    margin: 0px 0px 160px 0px;
+    margin: 0px 0px 80px 0px;
   }
 }
 .slider-hero__content > *:last-child {
@@ -1548,6 +1572,7 @@ body.ie ._ibg img {
   text-transform: uppercase;
   position: relative;
   writing-mode: vertical-rl;
+  pointer-events: none;
   transform: rotate(180deg);
 }
 .slider-collage__location span {

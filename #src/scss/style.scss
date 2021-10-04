@@ -97,6 +97,7 @@ body {
 	display: flex;
 	min-height: 100vh;
 	position: relative;
+	background-color: #000;
 	&__container {
 		flex: 1 1 auto;
 		display: flex;
@@ -117,6 +118,29 @@ body {
 		@media (max-width: $md3+px) {
 			display: none;
 		}
+	}
+}
+.map {
+	@media (min-height: 900px) and (min-width: 1024px) {
+		display: block;
+		position: absolute;
+		top: -800px;
+		right: -60px;
+		z-index: 1;
+		pointer-events: none;
+	}
+	display: none;
+	&__path {
+		stroke-dasharray: 600;
+		stroke-dashoffset: 600;
+		animation: mapPath infinite 10s;
+	}
+	@keyframes mapPath {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+	&__location {
 	}
 }
 .slider-hero {
@@ -160,7 +184,7 @@ body {
 		z-index: 5;
 		@media (min-height: $md3+px) and (min-width: 1024px) {
 			padding: 80px 80px 80px 0px;
-			margin: 0px 0px 160px 0px;
+			margin: 0px 0px 80px 0px;
 		}
 		& > *:last-child {
 			margin-bottom: 0;
@@ -321,6 +345,7 @@ body {
 		text-transform: uppercase;
 		position: relative;
 		writing-mode: vertical-rl;
+		pointer-events: none;
 		transform: rotate(180deg);
 		span {
 			font-weight: 100;
