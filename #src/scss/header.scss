@@ -15,10 +15,19 @@
 		}
 	}
 	@media (min-height: $md3+px) and (min-width: 1024px) {
+		position: absolute;
 		height: 100%;
 		border-right: 1px solid #4c4d4d;
 		width: math.div(170, 1440) * 100%;
 		max-width: 170px;
+		&._scroll {
+			background-color: rgba(#000, 0);
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: rgba(#000, 0);
+				}
+			}
+		}
 	}
 	&__body {
 		display: flex;

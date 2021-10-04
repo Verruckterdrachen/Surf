@@ -29,7 +29,7 @@
 	font-weight: 800;
 	text-transform: uppercase;
 	font-size: 40px;
-	line-height: math.div(64, 40) * 100%;
+	line-height: math.div(36, 40) * 100%;
 }
 .logo {
 	&__link {
@@ -54,6 +54,28 @@
 			&::before {
 				left: -38px;
 				transform: translateX(-100%);
+			}
+		}
+	}
+}
+.slider-arrow {
+	&::before {
+		color: #515353;
+		transition: color 0.3s;
+	}
+	&_white {
+		&::before {
+			color: #fff;
+		}
+	}
+	&_prev {
+		transform: rotate(-180deg);
+		margin: 0px 20px 0px 0px;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			&::before {
+				color: $accentColor;
 			}
 		}
 	}

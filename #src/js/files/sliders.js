@@ -105,4 +105,39 @@ if (document.querySelector('.slider-hero__body')) {
 	});
 }
 
+if (document.querySelector('.slider-collage__body')) {
+	let collageSlider = new Swiper('.slider-collage__body', {
+		slidesPerGroup: 1,
+		spaceBetween: 0,
+		watchOverflow: true,
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		speed: 1500,
+		navigation: {
+			nextEl: '.slider-collage .slider-arrow_next',
+			prevEl: '.slider-collage .slider-arrow_prev',
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1.1,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+			1200: {
+				slidesPerView: 3,
+			},
+			1440: {
+				slidesPerView: 4,
+			},
+		},
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
+	});
+}
+
 

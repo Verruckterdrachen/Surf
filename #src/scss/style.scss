@@ -86,6 +86,8 @@ body {
 	flex: 1 1 auto;
 	&__hero {
 	}
+	&__collage {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -152,7 +154,7 @@ body {
 		margin: 0px 0px math.div(40, 80) * 1em 0px;
 	}
 	&__subtitle {
-		margin: 0px 0px math.div(10, 22) * 1em 0px;
+		margin: 0px 0px math.div(25, 22) * 1em 0px;
 	}
 	&__place {
 		margin: 0px 0px math.div(20, 40) * 1em 0px;
@@ -235,20 +237,103 @@ body {
 		line-height: math.div(19, $fontSize) * 100%;
 	}
 }
-.slider-arrow {
-	&::before {
-		color: #fff;
-		transition: color 0.3s;
+//====================================================================================================
+.slider-collage {
+	&__arrows {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		position: relative;
+		right: 15px;
+		margin: 0px 0px 35px 0px;
+		@media (min-height: $md3+px) and (min-width: 1024px) {
+			right: 80px;
+		}
 	}
-	&_prev {
-		transform: rotate(-180deg);
-		margin: 0px 20px 0px 0px;
-	}
-	@media (any-hover: hover) {
-		&:hover {
-			&::before {
-				color: $accentColor;
+	&__slide {
+		display: flex;
+		z-index: 10;
+		position: relative;
+		height: 100%;
+		min-height: 750px;
+		&:nth-child(2n-1) {
+			@include adaptiv-value("margin-top", 90, 45, 1);
+		}
+		@media (min-width: $md3+px) {
+			margin-left: -40px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				.slider-collage__image {
+					&::before {
+						background-color: rgba(#1c2121, 0.315);
+					}
+				}
+				.slider-collage__link {
+					opacity: 1;
+					visibility: visible;
+				}
 			}
+		}
+		@media (any-hover: none) {
+			.slider-collage__link {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 72px 72px 80px 40px;
+		position: relative;
+		z-index: 5;
+	}
+	&__title {
+		max-width: 150px;
+		flex: 1 1 auto;
+		margin: 0px 0px 20px 0px;
+	}
+	&__location {
+		font-size: 18px;
+		line-height: math.div(22, 18) * 100%;
+		letter-spacing: 9px;
+		text-transform: uppercase;
+		position: relative;
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+		span {
+			font-weight: 100;
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		left: 40px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s;
+	}
+	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			transition: background-color 0.3s;
+			background-color: rgba(#1c2121, 0.85);
 		}
 	}
 }
