@@ -133,6 +133,73 @@
 		}
 	}
 }
+//====================================================================================================
+.place-slider {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	text-align: right;
+	&__suptitle {
+		margin: 0px 0px math.div(15, 22) * 1em 0px;
+	}
+}
+.head-slider {
+	&__suptitle {
+		margin: 0px 0px math.div(15, 22) * 1em 0px;
+	}
+}
+.items-slider {
+	display: grid;
+	gap: 20px;
+	@media (min-width: $md2+px) {
+		gap: 40px;
+		grid-template-columns: repeat(4, 1fr);
+		@media (max-width: 1300px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	&__block {
+		@media (min-width: $md2+px) {
+			display: flex;
+			align-items: flex-start;
+		}
+	}
+	&__category {
+		font-size: 18px;
+		line-height: math.div(22, 18) * 100%;
+		letter-spacing: 8px;
+		color: rgba(#fff, 0.5);
+		text-transform: uppercase;
+		margin: 0px 0px math.div(5, 18) * 1em 0px;
+		@media (min-width: $md2+px) {
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+			margin: 0px math.div(15, 18) * 1em 0px 0px;
+		}
+	}
+	&__subtitle {
+		font-size: 14px;
+		line-height: math.div(36, 14) * 100%;
+		letter-spacing: 5.25px;
+		color: rgba(#fff, 0.74);
+		text-transform: uppercase;
+	}
+}
+//====================================================================================================
+.section {
+	position: relative;
+	&__head {
+		@media (max-width: $md2+px) {
+			text-align: center;
+		}
+	}
+	&__title {
+		@media (min-width: $md2+px) {
+			padding: 0px 0px 0px 230px;
+		}
+		@include adaptiv-value("margin-bottom", 100, 80, 1);
+	}
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================
