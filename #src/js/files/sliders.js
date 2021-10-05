@@ -140,4 +140,28 @@ if (document.querySelector('.slider-collage__body')) {
 	});
 }
 
+if (document.querySelector('.slider-travel__body')) {
+	let travelSlider = new Swiper('.slider-travel__body', {
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		spaceBetween: 130,
+		watchOverflow: true,
+		parallax: true,
+		loop: true,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		speed: 1500,
+		navigation: {
+			nextEl: '.slider-travel .slider-arrow_next',
+			prevEl: '.slider-travel .slider-arrow_prev',
+		},
+	});
+}
+
 
