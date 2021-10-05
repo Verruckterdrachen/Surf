@@ -71,6 +71,7 @@ if (document.querySelector('.slider-hero__body')) {
 		autoplay: {
 			delay: 2500,
 			disableOnInteraction: false,
+			waitForTransition: true,
 		},
 		speed: 1500,
 		effect: 'fade',

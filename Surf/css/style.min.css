@@ -1666,24 +1666,24 @@ body.ie ._ibg img {
     display: none;
   }
 }
-.bullet-hero::before {
-  cursor: pointer;
+.bullet-hero::before, .bullet-hero::after {
   content: "";
   position: absolute;
-  width: 100%;
   height: 4px;
   top: -8px;
-  left: 0;
-  transition: background-color 0.3s;
+}
+.bullet-hero::before {
+  cursor: pointer;
+  width: 100%;
   background-color: #fff;
 }
-.bullet-hero_active::before {
+.bullet-hero::after {
+  width: 0%;
   background-color: #4af6cd;
 }
-@media (any-hover: hover) {
-  .bullet-hero:hover::before {
-    background-color: #4af6cd;
-  }
+.bullet-hero_active::after {
+  width: 100%;
+  transition: width 4s linear;
 }
 .bullet-hero__number {
   font-weight: 800;
@@ -1699,6 +1699,14 @@ body.ie ._ibg img {
   line-height: 118.75%;
 }
 
+.slider-collage {
+  padding-top: 200px;
+}
+@media (max-width: 1230px) {
+  .slider-collage {
+    padding-top: calc(100px + 100 * ((100vw - 320px) / 910));
+  }
+}
 .slider-collage__arrows {
   display: flex;
   align-items: center;
