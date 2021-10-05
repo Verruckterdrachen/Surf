@@ -1,6 +1,6 @@
 //====================================================================================================
 .footer {
-	@include adaptiv-value("padding-top", 300, 100, 1);
+	@include adaptiv-value("padding-top", 300, 50, 1);
 	padding-bottom: 35px;
 	&__container {
 		text-align: center;

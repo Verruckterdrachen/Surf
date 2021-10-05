@@ -95,6 +95,8 @@ body {
 	}
 	&__sleep {
 	}
+	&__shop {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -387,7 +389,7 @@ body {
 }
 //====================================================================================================
 .travel {
-	@include adaptiv-value("padding-top", 300, 100, 1);
+	@include adaptiv-value("padding-top", 300, 120, 1);
 	&__cover {
 		position: absolute;
 		bottom: -260px;
@@ -465,7 +467,7 @@ body {
 }
 //====================================================================================================
 .sleep {
-	@include adaptiv-value("padding-top", 300, 100, 1);
+	@include adaptiv-value("padding-top", 300, 120, 1);
 	&__cover {
 		position: absolute;
 		z-index: 10;
@@ -516,20 +518,9 @@ body {
 		@include adaptiv-value("padding-left", 130, 15, 1);
 		@include adaptiv-value("padding-right", 130, 15, 1);
 	}
-	&__rating {
-		display: flex;
-		align-items: center;
+	&__rate {
 		flex: 1 1 auto;
 		margin: 0px 0px 5px 0px;
-	}
-	&__star {
-		&::before {
-			color: $accentColor;
-			font-size: 22px;
-		}
-		&:not(:last-child) {
-			margin: 0px 11px 0px 0px;
-		}
 	}
 	&__head {
 		padding: 0px 30px 0px 0px;
@@ -563,5 +554,164 @@ body {
 	}
 }
 //====================================================================================================
-
+.shop {
+	@include adaptiv-value("padding-top", 300, 120, 1);
+}
+.slider-shop {
+	position: relative;
+	&__arrows {
+		display: flex;
+		justify-content: flex-end;
+		@include adaptiv-value("padding-right", 80, 15, 1);
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 30px 0px;
+			& > * {
+				&::before {
+					color: #fff;
+				}
+			}
+		}
+	}
+	&__body {
+		position: relative;
+	}
+	&__slide {
+		@media (min-width: $md3+px) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding-bottom: 60px;
+			@media (max-width: 1200px) {
+				justify-content: center;
+			}
+		}
+		@include adaptiv-value("padding-left", 130, 15, 1);
+		@include adaptiv-value("padding-right", 80, 15, 1);
+	}
+	&__info {
+		@media (min-width: $md3+px) {
+			align-self: center;
+			flex: 0 1 33.333%;
+			@media (max-width: 1200px) {
+				flex: 0 1 50%;
+			}
+		}
+	}
+	&__head {
+		@media (min-width: 1200px) {
+			max-width: 350px;
+		}
+		margin: 0px 0px 45px 0px;
+	}
+	&__rate {
+		margin: 0px 0px 5px 0px;
+	}
+	&__price {
+		font-weight: 800;
+		font-size: 32px;
+		line-height: math.div(40, 32) * 100%;
+		@include adaptiv-value("margin-bottom", 65, 35, 1);
+		sup {
+			font-size: 18px;
+			line-height: math.div(40, 18) * 100%;
+			padding: 0px 0px 0px 5px;
+		}
+	}
+	&__surfboard {
+		@media (min-width: $md3+px) {
+			text-align: left;
+			flex: 0 1 33.333%;
+			@media (max-width: 1200px) {
+				flex: 0 1 50%;
+				padding: 0px 30px;
+			}
+		}
+		text-align: center;
+		padding: 30px;
+		img {
+			@include adaptiv-value("height", 695, 495, 1);
+		}
+	}
+	&__extrax {
+		@media (min-width: $md3+px) {
+			flex: 0 1 33.333%;
+			@media (max-width: $md2+px) {
+				flex: 1 1 100%;
+			}
+		}
+	}
+	&__image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		img {
+			height: 100%;
+		}
+	}
+}
+.extrax-shop {
+	@media (min-width: $md4+px) {
+		max-width: 330px;
+		display: inline-flex;
+		justify-content: flex-end;
+		align-self: flex-end;
+		flex-wrap: wrap;
+	}
+	&__title {
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 28px;
+		line-height: math.div(40, 28) * 100%;
+		margin: 0px 0px math.div(30, 28) * 1em 0px;
+		@media (min-width: $md4+px) {
+			flex: 1 1 100%;
+		}
+	}
+	&__body {
+		@media (min-width: $md4+px) {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+	&__item {
+		@media (min-width: $md4+px) {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			text-align: center;
+			&:not(:last-child) {
+				margin: 0px 0px 0px 0px;
+			}
+		}
+		&:not(:last-child) {
+			margin: 0px 0px 30px 0px;
+		}
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__image {
+		@media (min-width: $md4+px) {
+			flex: 1 1 100%;
+		}
+		margin: 0px 0px 30px 0px;
+	}
+	&__name {
+		color: rgba(#fff, 0.5);
+		text-transform: uppercase;
+		font-size: 18px;
+		line-height: math.div(22, 18) * 100%;
+		margin: 0px 0px math.div(10, 18) * 1em 0px;
+		letter-spacing: 8px;
+	}
+	&__price {
+		font-weight: 800;
+		font-size: 18px;
+		line-height: math.div(40, 18) * 100%;
+		margin: 0px 0px math.div(20, 18) * 1em 0px;
+	}
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
